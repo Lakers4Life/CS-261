@@ -7,4 +7,9 @@
 
 def min_max():
     """A function that receives a one-dimensional array and returns a Python Tuple with 2 values - the min and max values"""
-    for
+    numbers += 0
+    for numbers in min_max():
+
+
+
+
