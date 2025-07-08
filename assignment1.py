@@ -152,10 +152,28 @@ def find_mode(arr: StaticArray) -> tuple[object, int]:
         mode_counter = current_count
 
     return (mode, mode_counter)
+
 # ------------------- PROBLEM 8 - REMOVE_DUPLICATES -------------------------
 def remove_duplicates(arr: StaticArray) -> StaticArray:
-    """"""
-pass
+    """A function that receives a StaticArray that is already in sorted order, and return a new StaticArray with all duplicate values removed"""
+    n = arr.length()
+    unique_count = 1
+    for i in range(1, n):
+        if arr.get(i) != arr.get(i-1):
+            unique_count+=1
+
+    result = StaticArray(unique_count)
+
+    write_pointer = 0
+    result.set(write_pointer, arr.get(0))
+    for i in range(1, n):
+        current = arr.get(i)
+        previous = arr.get(i-1)
+        if current != previous:
+            write_pointer += 1
+            result.set(write_pointer, current)
+
+    return result
 # ------------------- PROBLEM 9 - COUNT_SORT --------------------------------
 def count_sort(arr: StaticArray) -> StaticArray:
     """"""
