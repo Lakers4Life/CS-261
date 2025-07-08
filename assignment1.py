@@ -6,7 +6,6 @@
 # Description: 10 separate problems must be solved in Python in order to ensure that Python fundamentals are learned.
 
 import random
-from unittest import result
 
 from static_array import StaticArray
 
