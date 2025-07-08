@@ -127,8 +127,31 @@ def is_sorted(arr: StaticArray) -> int:
 
 # ------------------- PROBLEM 7 - FIND_MODE -----------------------------------
 def find_mode(arr: StaticArray) -> tuple[object, int]:
-    """"""
-pass
+    """A function that receives a StaticArray and returns the mode of the element (the most-occurring element in the array and its frequency (how many times it appears). If there is more than one element that has the highest frequency, the one that occurs first in the array is selected."""
+
+    n = arr.length()
+    mode = arr.get(0)
+    mode_counter = 1
+
+    current = mode
+    current_count = 1
+
+    for i in range(1, n):
+        value = arr.get(i)
+        if value == current:
+            current_count += 1
+        else:
+            if current_count > mode_counter:
+                mode = current
+                mode_counter = current_count
+            current = value
+            current_count = 1
+
+    if current_count > mode_counter:
+        mode = current
+        mode_counter = current_count
+
+    return (mode, mode_counter)
 # ------------------- PROBLEM 8 - REMOVE_DUPLICATES -------------------------
 def remove_duplicates(arr: StaticArray) -> StaticArray:
     """"""
