@@ -119,11 +119,11 @@ def is_sorted(arr: StaticArray) -> int:
 
         previous = value
 
-        if ascending:
-            return 1
-        if descending:
-            return -1
-        return 0
+    if ascending:
+        return 1
+    if descending:
+        return -1
+    return 0
 
 # ------------------- PROBLEM 7 - FIND_MODE -----------------------------------
 def find_mode(arr: StaticArray) -> tuple[object, int]:
