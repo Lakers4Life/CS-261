@@ -96,8 +96,35 @@ def sa_range(start: int, end: int) -> StaticArray:
     return result
 # ------------------- PROBLEM 6 - IS_SORTED ---------------------------------
 def is_sorted(arr: StaticArray) -> int:
-    """"""
-pass
+    """A function that receives a StaticArray and returns an integer that describes whether the array is sorted. IIt returns 1 if the array is sorted in ascending order, -1 if the list is in descending order, or 0 if otherwise"""
+    n = arr.length()
+    if n <= 1:
+        return 1
+
+    ascending = True    # Assuming both are true until either or is proven wrong
+    descending = True
+
+    previous = arr.get(0)
+    for i in range(1, n):
+        value = arr.get(i)
+
+        if not (value > previous):
+            ascending = False
+
+        if not (value < previous):
+            descending = False
+
+        if not ascending and not descending:
+            return 0
+
+        previous = value
+
+        if ascending:
+            return 1
+        if descending:
+            return -1
+        return 0
+
 # ------------------- PROBLEM 7 - FIND_MODE -----------------------------------
 def find_mode(arr: StaticArray) -> tuple[object, int]:
     """"""
