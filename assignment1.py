@@ -96,31 +96,21 @@ def sa_range(start: int, end: int) -> StaticArray:
     return result
 # ------------------- PROBLEM 6 - IS_SORTED ---------------------------------
 def is_sorted(arr: StaticArray) -> int:
-"""
-TODO: Write this implementation
-"""
+    """"""
 pass
 # ------------------- PROBLEM 7 - FIND_MODE -----------------------------------
 def find_mode(arr: StaticArray) -> tuple[object, int]:
-"""
-TODO: Write this implementation
-"""
+    """"""
 pass
 # ------------------- PROBLEM 8 - REMOVE_DUPLICATES -------------------------
 def remove_duplicates(arr: StaticArray) -> StaticArray:
-"""
-TODO: Write this implementation
-"""
+    """"""
 pass
 # ------------------- PROBLEM 9 - COUNT_SORT --------------------------------
 def count_sort(arr: StaticArray) -> StaticArray:
-"""
-TODO: Write this implementation
-"""
+    """"""
 pass
 # ------------------- PROBLEM 10 - SORTED SQUARES ---------------------------
 def sorted_squares(arr: StaticArray) -> StaticArray:
-"""
-TODO: Write this implementation
-"""
+    """"""
 pass
