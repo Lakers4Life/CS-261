@@ -29,16 +29,99 @@ def min_max(arr: StaticArray) -> tuple[int, int]:
 def fizz_buzz(arr: StaticArray) -> StaticArray:
     """A function that receives a StaticArray of integers and returns a new StaticArray object with the content of the original array """
 
+    result = StaticArray(arr.length())
+
     for i in range(0, arr.length()):
         value = arr.get(i)
 
-        if value % 3 and value % 5 == 0:
+        if value % 3 ==0 and value % 5 == 0:
             value = "fizzbuzz"
         elif value % 5 == 0:
             value = "buzz"
         elif value % 3 == 0:
             value = "fizz"
 
-    result.set(i, value)
+        result.set(i, value)        # Continues the Loop
+
     return result
 
+# ------------------- PROBLEM 3 - REVERSE -----------------------------------
+def reverse(arr: StaticArray) -> None:
+    """A function that receives a StaticArray and reverses the order of the elements in the array."""
+
+    left = 0
+    right = arr.length() - 1
+
+    while left < right:
+        left_value = arr.get(left)
+        right_value = arr.get(right)
+
+        arr.set(left, right_value)
+        arr.set(right, left_value)
+
+        left += 1
+        right -= 1
+
+# ------------------- PROBLEM 4 - ROTATE ------------------------------------
+def rotate(arr: StaticArray, steps: int) -> StaticArray:
+    """A function that receives a StaticArray and an integer value called steps, and creates and returns a new StaticArray object with their position shifted right or left steps number of times"""
+    N = arr.length()
+
+    k = steps % N
+    if k < 0:
+        k += N
+
+    result = StaticArray(N)
+
+    for i in range(N):
+        value = arr.get(i)
+        new_index = (i +k) % N
+        result.set(new_index, value)
+
+    return result
+
+# ------------------- PROBLEM 5 - SA_RANGE ----------------------------------
+def sa_range(start: int, end: int) -> StaticArray:
+    """A function that receives 2 integers start and end, and returns a StaticArray that contains all the integers between start and end(inclusive) """
+    length = abs(end - start) + 1
+
+    result = StaticArray(length)
+
+    step = 1 if end >= start else -1
+
+    current = start
+    for i in range(length):
+        result.set(i, current)
+        current += step
+
+    return result
+# ------------------- PROBLEM 6 - IS_SORTED ---------------------------------
+def is_sorted(arr: StaticArray) -> int:
+"""
+TODO: Write this implementation
+"""
+pass
+# ------------------- PROBLEM 7 - FIND_MODE -----------------------------------
+def find_mode(arr: StaticArray) -> tuple[object, int]:
+"""
+TODO: Write this implementation
+"""
+pass
+# ------------------- PROBLEM 8 - REMOVE_DUPLICATES -------------------------
+def remove_duplicates(arr: StaticArray) -> StaticArray:
+"""
+TODO: Write this implementation
+"""
+pass
+# ------------------- PROBLEM 9 - COUNT_SORT --------------------------------
+def count_sort(arr: StaticArray) -> StaticArray:
+"""
+TODO: Write this implementation
+"""
+pass
+# ------------------- PROBLEM 10 - SORTED SQUARES ---------------------------
+def sorted_squares(arr: StaticArray) -> StaticArray:
+"""
+TODO: Write this implementation
+"""
+pass
